@@ -1,0 +1,47 @@
+.header__elements {
+  display: flex;
+  /* flex-direction: row;
+  justify-content: flex-end; */
+  margin-top: 30px;
+  margin-right: 104px;
+  gap: 30px;
+  position: absolute;
+  top: 1px;
+  right: 5px;
+}
+
+.header__logo {
+  height: 24px;
+  width: 200px;
+  position: absolute;
+  top: 42px;
+  left: 104px;
+}
+
+.header__home-button {
+  background-color: none;
+  font-size: 18px;
+  color: #fff;
+}
+
+.header__home-button:hover {
+  border-bottom: #fff solid 3px;
+}
+
+.header__sign-in {
+  background: transparent url(../../images/Rectangle.svg) center no-repeat;
+  border-radius: 100px;
+  border: solid 1px #fff;
+  font-size: 18px;
+  height: 48px;
+  width: 176px;
+  color: #fff;
+}
+
+.header__border {
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  border: solid 1px #fff;
+  opacity: 0.2;
+}
