@@ -1,5 +1,5 @@
-.main {
-}
+/* .main {
+} */
 
 .main__section {
   display: flex;
@@ -66,4 +66,35 @@
   background-repeat: no-repeat;
   height: 600px;
   background-size: cover;
+}
+
+.main__about {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  margin-left: 100px;
+  margin-bottom: 120px;
+  color: black;
+  width: 1000px;
+  gap: 50px;
+}
+
+.main__about-image {
+  height: 464px;
+  width: 464px;
+}
+
+.main__about-title {
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+.main__about-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.main__about-wording {
+  display: flex;
+  flex-direction: column;
 }

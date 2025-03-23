@@ -7,12 +7,14 @@ const currentYear = new Date().getFullYear();
 const Footer = () => {
   return (
     <footer className="footer">
-      <div>© {currentYear} Supersite, Powered by News API</div>
+      <div className="footer__credits">
+        © {currentYear} Supersite, Powered by News API
+      </div>
       <div className="footer__elements">
-        <p>Home</p>
-        <p>TripleTen</p>
-        <img src={github} alt="github" />
-        <img src={linkedIn} alt="linkedIn" />
+        <button>Home</button>
+        <button>TripleTen</button>
+        <img className="footer__github" src={github} alt="github" />
+        <img className="footer__linkedin" src={linkedIn} alt="linkedIn" />
       </div>
     </footer>
   );

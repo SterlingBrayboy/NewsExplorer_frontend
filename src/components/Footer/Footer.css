@@ -1,12 +1,24 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  margin: 20px 90px 0 90px;
+  margin: 0 90px 20px 90px;
   padding: 0 20px;
+}
+
+.footer__credits {
+  color: #b6bcbf;
 }
 
 .footer__elements {
   display: flex;
   flex-direction: row;
   gap: 30px;
+}
+
+.footer__github {
+  cursor: pointer;
+}
+
+.footer__linkedin {
+  cursor: pointer;
 }

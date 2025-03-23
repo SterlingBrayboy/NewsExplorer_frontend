@@ -26,6 +26,7 @@
 
 .header__home-button:hover {
   border-bottom: #fff solid 3px;
+  line-height: 50px;
 }
 
 .header__sign-in {
