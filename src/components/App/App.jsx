@@ -4,6 +4,8 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import LoginModal from "../LoginModal/LoginModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
+import SuccessModal from "../SuccessModal/SuccessModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState(null);
@@ -12,8 +14,16 @@ function App() {
     setActiveModal("login");
   };
 
+  const handleRegisterModal = () => {
+    setActiveModal("signup");
+  };
+
   const handleCloseModal = () => {
     setActiveModal(null);
+  };
+
+  const handleSignUpSuccess = () => {
+    setActiveModal("success");
   };
 
   // CLOSE MODAL WITH ESC METHOD
@@ -43,7 +53,24 @@ function App() {
         <LoginModal
           handleCloseModal={handleCloseModal}
           onCreateModal={handleLoginModal}
+          onSignUpClick={handleRegisterModal}
           isOpen={activeModal === "login"}
+        />
+      )}
+      {activeModal === "signup" && (
+        <RegisterModal
+          handleCloseModal={handleCloseModal}
+          onCreateModal={handleRegisterModal}
+          onSignInClick={handleLoginModal}
+          handleSignUpSuccess={handleSignUpSuccess}
+          isOpen={activeModal === "signup"}
+        />
+      )}
+      {activeModal === "success" && (
+        <SuccessModal
+          handleCloseModal={handleCloseModal}
+          onSignInClick={handleLoginModal}
+          isOpen={activeModal === "success"}
         />
       )}
     </div>

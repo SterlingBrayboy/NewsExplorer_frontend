@@ -15,7 +15,9 @@ const Main = () => {
           </p>
           <form className="main__search-form">
             <input className="main__search" placeholder="Enter topic"></input>
-            <button className="main__search-button">Search</button>
+            <button className="main__search-button" type="button">
+              Search
+            </button>
           </form>
         </div>
       </section>

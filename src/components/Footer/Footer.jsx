@@ -11,8 +11,8 @@ const Footer = () => {
         © {currentYear} Supersite, Powered by News API
       </div>
       <div className="footer__elements">
-        <button>Home</button>
-        <button>TripleTen</button>
+        <button type="button">Home</button>
+        <button type="button">TripleTen</button>
         <img className="footer__github" src={github} alt="github" />
         <img className="footer__linkedin" src={linkedIn} alt="linkedIn" />
       </div>

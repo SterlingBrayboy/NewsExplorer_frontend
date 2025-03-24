@@ -9,8 +9,14 @@ const Header = ({ onCreateModal }) => {
     <header className="header">
       <img className="header__logo" src={logo} alt="logo" />
       <div className="header__elements">
-        <button className="header__home-button">Home</button>
-        <button className="header__sign-in" onClick={onCreateModal}>
+        <button className="header__home-button" type="button">
+          Home
+        </button>
+        <button
+          className="header__sign-in"
+          type="button"
+          onClick={onCreateModal}
+        >
           Sign In
         </button>
       </div>
