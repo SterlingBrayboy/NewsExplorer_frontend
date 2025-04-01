@@ -5,6 +5,7 @@ const RegisterModal = ({
   handleCloseModal,
   isOpen,
   onSignInClick,
+  handleRegistration,
   handleSignUpSuccess,
 }) => {
   const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ const RegisterModal = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //   handleLogin({ email, password });
+    handleRegistration({ username, email, password });
     handleSignUpSuccess();
   };
 

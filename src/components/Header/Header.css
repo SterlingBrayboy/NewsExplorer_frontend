@@ -24,10 +24,22 @@
   color: #fff;
 }
 
-.header__home-button:hover {
+.header__saved-button {
+  background-color: none;
+  font-size: 18px;
+  color: #fff;
+  margin-left: 30px;
+}
+
+/* .header__home-button:hover {
   border-bottom: #fff solid 3px;
   line-height: 50px;
-}
+} */
+
+/* .header__saved-button:hover {
+  border-bottom: #fff solid 3px;
+  line-height: 50px;
+} */
 
 .header__sign-in {
   background: transparent url(../../images/Rectangle.svg) center no-repeat;
