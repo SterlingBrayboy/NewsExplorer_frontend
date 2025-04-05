@@ -15,11 +15,13 @@
 }
 
 .about__title {
+  font-family: "Roboto Slab-Regular";
   font-size: 40px;
   margin-top: 50px;
 }
 
 .about__subtitle {
+  font-family: "Roboto Regular";
   font-size: 18px;
   margin-top: 10px;
 }

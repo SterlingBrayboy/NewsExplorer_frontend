@@ -11,19 +11,31 @@ const RegisterModal = ({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   const handlePasswordChange = (e) => {
     console.log(e.target.value);
     setPassword(e.target.value);
+    checkFormValidity(e.target.value, password);
   };
   const handleEmailChange = (e) => {
     console.log(e.target.value);
     setEmail(e.target.value);
+    checkFormValidity(e.target.value, email);
   };
 
   const handleUsernameChange = (e) => {
     console.log(e.target.value);
     setUsername(e.target.value);
+    checkFormValidity(e.target.value, username);
+  };
+
+  const checkFormValidity = () => {
+    if (email.trim() && password.trim() && username.trim()) {
+      setIsButtonDisabled(false);
+    } else {
+      setIsButtonDisabled(true);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -76,7 +88,13 @@ const RegisterModal = ({
           onChange={handleUsernameChange}
         />
       </label>
-      <button className="modal__submit" type="submit">
+      <button
+        className={`modal__submit ${
+          isButtonDisabled ? "modal__submit--disabled" : ""
+        }`}
+        type="submit"
+        disabled={isButtonDisabled}
+      >
         Sign Up
       </button>
       <div className="modal__signin-container">

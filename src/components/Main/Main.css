@@ -17,7 +17,10 @@
 }
 
 .main__title {
+  font-family: "Roboto Slab-Regular";
+  line-height: 64px;
   font-size: 60px;
+  margin-bottom: 25px;
 }
 
 .main__subtitle {

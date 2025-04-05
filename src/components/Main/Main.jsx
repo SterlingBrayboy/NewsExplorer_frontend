@@ -1,6 +1,7 @@
 import "./Main.css";
 import React from "react";
 import Preloader from "../Preloader/Preloader";
+import About from "../About/About";
 
 const Main = () => {
   return (
@@ -15,6 +16,7 @@ const Main = () => {
           </p>
         </div>
       </section>
+      <About />
 
       {/* <section className="main__loading">
         <div>

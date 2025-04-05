@@ -73,6 +73,22 @@
   cursor: pointer;
 }
 
+.modal__submit--disabled {
+  background-color: #ccc;
+  color: #666;
+  height: 64px;
+  margin-top: 20px;
+  border-radius: 32px;
+  border: none;
+  cursor: not-allowed;
+}
+
+.modal__input--error {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
 .modal__signup {
   color: #2f71e5;
 }

@@ -1,17 +1,17 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import About from "../About/About";
 import SearchForm from "../SearchForm/SearchForm";
+import Profile from "../Profile/Profile";
 import Preloader from "../Preloader/Preloader";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 import Api from "../../utils/Api";
 import Auth from "../../utils/Auth";
@@ -111,49 +111,48 @@ function App() {
 
   // EDIT PROFILE HANDLER
 
-  // const handleEditProfile = ({ username, avatar }) => {
-  //   const token = localStorage.getItem("jwt");
-  //   if (username && avatar) {
-  //     api
-  //       .editUser(token, username, avatar)
-  //       .then((res) => {
-  //         handleCloseModal();
-  //         setCurrentUser(res);
-  //       })
-  //       .catch((err) => console.error(err));
-  //   }
-  // };
+  const handleEditProfile = ({ username, avatar }) => {
+    const token = localStorage.getItem("jwt");
+    if (username) {
+      api
+        .editUser(token, username)
+        .then((res) => {
+          handleCloseModal();
+          setCurrentUser(res);
+        })
+        .catch((err) => console.error(err));
+    }
+  };
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("jwt");
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
 
-  //   if (token) {
-  //     // Call a function to verify the token
-  //     auth
-  //       .verifyToken(token)
-  //       .then((user) => {
-  //         // Handle successful verification
-  //         setCurrentUser(user);
-  //         setIsLoggedIn(true);
-  //       })
-  //       .catch((err) => {
-  //         console.error(err);
-  //       });
-  //   }
-  // }, []);
+    if (token) {
+      // Call a function to verify the token
+      auth
+        .verifyToken(token)
+        .then((user) => {
+          // Handle successful verification
+          setCurrentUser(user);
+          setIsLoggedIn(true);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  }, []);
 
   return (
     <CurrentUserContext.Provider value={{ currentUser }}>
       <div className="App">
         <Header onCreateModal={handleLoginModal} />
-        <Main />
-        {/* <Routes>
-        <Route exact path="/"></Route>
-        <Route path="/saved-news">
-          {isLoggedIn ? <Redirect to="/profile" /> : <Redirect to="/" />}
-        </Route>
-      </Routes> */}
-        <About />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route
+            path="/profile"
+            element={isLoggedIn ? <Profile /> : <Navigate to="/" />}
+          />
+        </Routes>
         <SearchForm />
         {/* <Preloader /> */}
         <Footer />

@@ -12,7 +12,7 @@ class Api {
     return Promise.reject(`Error ${res.status}`);
   }
 
-  editUser(token, name, avatar) {
+  editUser(token, username) {
     return fetch(this.baseUrl + "/users/me", {
       method: "PATCH",
       headers: {
@@ -20,8 +20,7 @@ class Api {
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        name,
-        avatar,
+        username,
       }),
     }).then(this._checkResponse);
   }

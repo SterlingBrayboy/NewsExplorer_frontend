@@ -2,7 +2,6 @@ class Auth {
   constructor({ baseUrl, headers }) {
     this.baseUrl = baseUrl;
     this._headers = headers;
-    console.log("Auth Base URL:", this.baseUrl);
   }
 
   _checkResponse(res) {
