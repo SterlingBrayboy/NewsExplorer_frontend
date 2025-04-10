@@ -3,22 +3,22 @@ import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
-import About from "../About/About";
 import SearchForm from "../SearchForm/SearchForm";
 import Profile from "../Profile/Profile";
-import Preloader from "../Preloader/Preloader";
+// import Preloader from "../Preloader/Preloader";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { Route, Routes, Navigate } from "react-router-dom";
+import { newsApiBaseUrl } from "../../utils/newsApi";
 
 import Api from "../../utils/Api";
 import Auth from "../../utils/Auth";
 import { baseUrl } from "../../utils/constants";
 
 const api = new Api({
-  baseUrl: baseUrl,
+  baseUrl: newsApiBaseUrl,
   headers: {
     "Content-Type": "application/json",
   },
@@ -111,18 +111,18 @@ function App() {
 
   // EDIT PROFILE HANDLER
 
-  const handleEditProfile = ({ username, avatar }) => {
-    const token = localStorage.getItem("jwt");
-    if (username) {
-      api
-        .editUser(token, username)
-        .then((res) => {
-          handleCloseModal();
-          setCurrentUser(res);
-        })
-        .catch((err) => console.error(err));
-    }
-  };
+  // const handleEditProfile = ({ username, avatar }) => {
+  //   const token = localStorage.getItem("jwt");
+  //   if (username) {
+  //     api
+  //       .editUser(token, username)
+  //       .then((res) => {
+  //         handleCloseModal();
+  //         setCurrentUser(res);
+  //       })
+  //       .catch((err) => console.error(err));
+  //   }
+  // };
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
@@ -142,6 +142,15 @@ function App() {
     }
   }, []);
 
+  const handleSearch = ({ searchQuery, from, to }) => {
+    api
+      .getArticles(searchQuery, from, to)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
     <CurrentUserContext.Provider value={{ currentUser }}>
       <div className="App">
@@ -153,7 +162,7 @@ function App() {
             element={isLoggedIn ? <Profile /> : <Navigate to="/" />}
           />
         </Routes>
-        <SearchForm />
+        <SearchForm handleSearch={handleSearch} />
         {/* <Preloader /> */}
         <Footer />
         {activeModal === "login" && (
