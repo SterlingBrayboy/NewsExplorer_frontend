@@ -1,9 +1,10 @@
 import "./Main.css";
 import React from "react";
-import Preloader from "../Preloader/Preloader";
+// import Preloader from "../Preloader/Preloader";
 import About from "../About/About";
+import NewsCard from "../NewsCard/NewsCard";
 
-const Main = () => {
+const Main = ({ article }) => {
   return (
     <main className="main">
       <div className="main__background"></div>
@@ -17,12 +18,7 @@ const Main = () => {
         </div>
       </section>
       <About />
-
-      {/* <section className="main__loading">
-        <div>
-          <Preloader />
-        </div>
-      </section> */}
+      <NewsCard />
     </main>
   );
 };

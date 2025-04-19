@@ -18,7 +18,7 @@ import Auth from "../../utils/Auth";
 import { baseUrl } from "../../utils/constants";
 
 const api = new Api({
-  baseUrl: newsApiBaseUrl,
+  newsApiBaseUrl: newsApiBaseUrl,
   headers: {
     "Content-Type": "application/json",
   },
@@ -31,10 +31,17 @@ const auth = new Auth({
   },
 });
 
+// function getArticles() {
+//   return fetch(`${newsApiBaseUrl}` + "/articles", {
+//     method: "GET",
+//   });
+// }
+
 function App() {
   const [activeModal, setActiveModal] = useState(null);
   const [currentUser, setCurrentUser] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [articles, setArticles] = useState([]);
 
   const handleLoginModal = () => {
     setActiveModal("login");
@@ -142,10 +149,11 @@ function App() {
     }
   }, []);
 
-  const handleSearch = ({ searchQuery, from, to }) => {
+  const handleSearch = (q) => {
     api
-      .getArticles(searchQuery, from, to)
+      .getArticles(q)
       .then((res) => {
+        setArticles(res.articles);
         console.log(res);
       })
       .catch((err) => console.error(err));
@@ -156,7 +164,7 @@ function App() {
       <div className="App">
         <Header onCreateModal={handleLoginModal} />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main articles={articles} />} />
           <Route
             path="/profile"
             element={isLoggedIn ? <Profile /> : <Navigate to="/" />}

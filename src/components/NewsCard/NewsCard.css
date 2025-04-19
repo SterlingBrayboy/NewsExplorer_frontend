@@ -1,0 +1,27 @@
+/* .newscard {
+} */
+
+/* .newscard__articles {
+} */
+
+.newscard__article {
+  width: 400px;
+  height: 576px;
+}
+
+/* .newscard__image {
+} */
+
+.newscard__info {
+  background-color: #fff;
+}
+
+.newscard__title {
+  font-family: "Roboto Slab-Regular";
+  color: black;
+}
+
+.newscard__description {
+  font-family: "Roboto Regular";
+  color: black;
+}

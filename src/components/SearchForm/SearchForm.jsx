@@ -5,12 +5,13 @@ const SearchForm = ({ handleSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleInputChange = (e) => {
+    console.log(e.target.value);
     setSearchQuery(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSearch({ searchQuery });
+    handleSearch(searchQuery);
   };
 
   return (
@@ -20,7 +21,6 @@ const SearchForm = ({ handleSearch }) => {
           className="search__input"
           placeholder="Enter topic"
           type="text"
-          value={searchQuery}
           onChange={handleInputChange}
         ></input>
         <button className="search__button" type="submit">

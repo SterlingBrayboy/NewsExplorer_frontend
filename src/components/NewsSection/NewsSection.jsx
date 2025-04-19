@@ -2,10 +2,10 @@ import React from "react";
 import NewsCard from "../NewsCard/NewsCard";
 
 const NewsSection = ({}) => {
-  const profileCards = clothingItems;
+  //   const profileCards = clothingItems;
 
   return (
-    <div className="card__items">
+    <div className="newscard__items">
       {profileCards.map((item) => (
         <NewsCard
           source={source.name}
