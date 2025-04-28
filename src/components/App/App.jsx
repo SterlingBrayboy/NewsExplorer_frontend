@@ -155,6 +155,7 @@ function App() {
       .then((res) => {
         setArticles(res.articles);
         console.log(res);
+        console.log(res.articles);
       })
       .catch((err) => console.error(err));
   };

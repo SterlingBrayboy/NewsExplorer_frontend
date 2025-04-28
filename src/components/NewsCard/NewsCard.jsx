@@ -14,18 +14,18 @@ const NewsCard = ({ article }) => {
   // Determine the style of the like button based on whether it's liked
   //   const cardLiked = !isLiked ? "newscard__like" : "newscard__unlike";
 
+  const images = article.urlToImage;
+  const titles = article.title;
+  const description = article.description;
+
   return (
     <section className="newscard">
-      <div className="newscard__articles">
+      <div className="newscard__container">
         <div className="newscard__article">
-          <img
-            src={article.urlToImage}
-            alt={article.title}
-            className="newscard__image"
-          />
+          <img src={images} alt={titles} className="newscard__image" />
           <div className="newscard__info">
-            <h3 className="newscard__title">{article.title}</h3>
-            <p className="newscard__description">{article.description}</p>
+            <h3 className="newscard__title">{titles}</h3>
+            <p className="newscard__description">{description}</p>
           </div>
         </div>
       </div>

@@ -1,12 +1,18 @@
 /* .newscard {
 } */
 
-/* .newscard__articles {
-} */
+.newscard__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 1314px;
+}
 
 .newscard__article {
   width: 400px;
   height: 576px;
+  cursor: pointer;
+  border-radius: 60%;
 }
 
 /* .newscard__image {
@@ -19,9 +25,11 @@
 .newscard__title {
   font-family: "Roboto Slab-Regular";
   color: black;
+  font-size: 26px;
 }
 
 .newscard__description {
   font-family: "Roboto Regular";
   color: black;
+  font-size: 16px;
 }

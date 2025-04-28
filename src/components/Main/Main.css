@@ -27,6 +27,14 @@
   font-size: 18px;
 }
 
+.main__error-message {
+  font-size: 18px;
+  color: #000;
+  position: absolute;
+  bottom: -360px;
+  left: 250px;
+}
+
 .main__background {
   background-image: url("../../images/Background.png");
   background-position: center;

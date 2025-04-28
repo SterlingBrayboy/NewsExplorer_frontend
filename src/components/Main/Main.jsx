@@ -4,7 +4,7 @@ import React from "react";
 import About from "../About/About";
 import NewsCard from "../NewsCard/NewsCard";
 
-const Main = ({ article }) => {
+const Main = ({ articles }) => {
   return (
     <main className="main">
       <div className="main__background"></div>
@@ -15,10 +15,16 @@ const Main = ({ article }) => {
             Find the latest news on any topic and save them in your personal
             account.
           </p>
+          {articles.length > 0 ? (
+            articles.map((article, index) => (
+              <NewsCard key={index} article={article} />
+            ))
+          ) : (
+            <p className="main__error-message">No Articles Found.</p>
+          )}
         </div>
       </section>
       <About />
-      <NewsCard />
     </main>
   );
 };
