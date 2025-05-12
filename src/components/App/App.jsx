@@ -165,13 +165,15 @@ function App() {
       <div className="App">
         <Header onCreateModal={handleLoginModal} />
         <Routes>
-          <Route path="/" element={<Main articles={articles} />} />
+          <Route
+            path="/"
+            element={<Main articles={articles} handleSearch={handleSearch} />}
+          />
           <Route
             path="/profile"
             element={isLoggedIn ? <Profile /> : <Navigate to="/" />}
           />
         </Routes>
-        <SearchForm handleSearch={handleSearch} />
         {/* <Preloader /> */}
         <Footer />
         {activeModal === "login" && (

@@ -1,20 +1,19 @@
-.newscard__area {
+.newscard {
   background-color: #f5f6f7;
-  max-width: 1645px;
-  /* position: relative;
-  right: 550px; */
 }
 
-.newscard__container {
-  background-color: #fff;
-  border-radius: 5%;
-  width: 400px;
-  height: 576px;
-  margin-left: 100px;
+.newscard__articles {
+  display: flex;
+  flex-direction: row;
+  max-width: 1400px;
 }
 
 .newscard__article {
   cursor: pointer;
+  background-color: #fff;
+  border-radius: 5%;
+  width: 400px;
+  height: 576px;
 }
 
 .newscard__image {
