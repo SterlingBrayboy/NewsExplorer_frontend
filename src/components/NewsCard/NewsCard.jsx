@@ -20,13 +20,11 @@ const NewsCard = ({ article }) => {
 
   return (
     <section className="newscard">
-      <div className="newscard__articles">
-        <div className="newscard__article">
-          <img src={images} alt={titles} className="newscard__image" />
-          <div className="newscard__info">
-            <h3 className="newscard__title">{titles}</h3>
-            <p className="newscard__description">{description}</p>
-          </div>
+      <div className="newscard__article">
+        <img src={images} alt={titles} className="newscard__image" />
+        <div className="newscard__info">
+          <h3 className="newscard__title">{titles}</h3>
+          <p className="newscard__description">{description}</p>
         </div>
       </div>
     </section>
