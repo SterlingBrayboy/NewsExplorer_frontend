@@ -1,20 +1,88 @@
-.newscard {
+.newscard__articles {
   background-color: #f5f6f7;
   display: grid;
-  width: 100%;
   gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
+  grid-template-columns: repeat(3, 400px);
+  padding-top: 30px;
+  padding-bottom: 30px;
   justify-content: center;
+}
+
+.newscard__source {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Roboto Regular";
+  color: black;
+  font-size: 16px;
 }
 
 .newscard__article {
   cursor: pointer;
   background-color: #fff;
+  box-shadow: 10px 5px 5px rgb(0 0 0 / 5%);
+  position: relative;
   border-radius: 5%;
   width: 100%;
   max-width: 400px;
   height: 576px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.newscard__save-button {
+  background-color: #fff;
+  background-image: url("../../images/save-icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 20px;
+  left: 335px;
+  cursor: pointer;
+}
+
+.newscard__save-button:hover {
+  background-image: url("../../images/save-dark.svg");
+  transition-duration: 0.5s;
+}
+
+.newscard__save-clicked {
+  background-image: url("../../images/save-blue.svg");
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 20px;
+  left: 335px;
+  cursor: pointer;
+}
+
+.newscard__show-more {
+  grid-column: 1 / -1;
+  justify-self: center;
+  background-color: #fff;
+  color: #000;
+  height: 64px;
+  width: 288px;
+  margin-top: 20px;
+  border-radius: 32px;
+  cursor: pointer;
+}
+
+.newscard__show-more:hover {
+  background-color: #e8e8e8;
+  transition-duration: 0.5s;
 }
 
 .newscard__image {
@@ -29,8 +97,8 @@
 }
 
 .newscard__title {
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   padding-bottom: 15px;
   padding-top: 50px;
   font-family: "Roboto Slab-Regular";

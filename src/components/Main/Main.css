@@ -27,12 +27,28 @@
   font-size: 18px;
 }
 
-.main__error-message {
+.main__error {
+  grid-column: 1 / -1;
+  justify-self: center;
+  /* display: flex;
+  flex-direction: column; */
+  justify-content: center;
+}
+
+.main__error-title {
   font-size: 18px;
   color: #000;
-  position: absolute;
+  /* position: absolute;
   bottom: -360px;
-  left: 250px;
+  left: 250px; */
+}
+
+.main__error-subtitle {
+  font-size: 14px;
+  color: #000;
+  /* position: absolute;
+  bottom: -360px;
+  left: 250px; */
 }
 
 .main__background {

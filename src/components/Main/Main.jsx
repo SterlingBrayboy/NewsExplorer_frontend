@@ -27,15 +27,30 @@ const Main = ({ articles, handleSearch }) => {
 
 export default Main;
 function Articles({ articles }) {
-  const [numToShow, setNumToShow] = useState(3);
+  const [numToShow, setNumToShow] = useState(6);
   return (
-    <section>
+    <section className="newscard__articles">
       {articles.length > 0 ? (
-        articles
-          .slice(0, numToShow)
-          .map((article, index) => <NewsCard key={index} article={article} />)
+        <>
+          {articles.slice(0, numToShow).map((article, index) => (
+            <NewsCard key={index} article={article} />
+          ))}
+          {numToShow < articles.length && (
+            <button
+              className="newscard__show-more"
+              onClick={() => setNumToShow(numToShow + 3)}
+            >
+              Show More
+            </button>
+          )}
+        </>
       ) : (
-        <p className="main__error-message">No Articles Found.</p>
+        <div className="main__error">
+          <h3 className="main__error-title">Nothing Found</h3>
+          <p className="main__error-subtitle">
+            Sorry, but nothing matched your search terms.
+          </p>
+        </div>
       )}
     </section>
   );
