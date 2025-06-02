@@ -34,4 +34,5 @@
 
 .search__button:hover {
   background-color: #347eff;
+  transition: 0.3s;
 }

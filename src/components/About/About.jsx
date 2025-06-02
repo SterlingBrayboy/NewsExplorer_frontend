@@ -8,8 +8,11 @@ const About = () => {
       <div className="about__wording">
         <h1 className="about__title">About the author</h1>
         <p className="about__subtitle">
-          Find the latest news on any topic and save them in your personal
-          account.
+          Fullstack Software Engineer with 2 years of experience building web
+          applications using the MERN stack (MongoDB, Express, React, Node.js)
+          and Git, with deployment experience on Google Cloud. Curious about AI
+          and eager to integrate emerging technologies into modern web
+          solutions.
         </p>
       </div>
     </section>

@@ -16,6 +16,7 @@ const NewsCard = ({ article }) => {
   //   const cardLiked = !isLiked ? "newscard__like" : "newscard__unlike";
 
   const [save, setSave] = useState(true);
+  const [isWarningVisible, setIsWarningVisible] = useState(false);
 
   const images = article.urlToImage;
   const titles = article.title;
@@ -29,7 +30,16 @@ const NewsCard = ({ article }) => {
         <button
           className={save ? "newscard__save-button" : "newscard__save-clicked"}
           onClick={() => setSave(!save)}
+          onMouseEnter={() => setIsWarningVisible(true)}
+          onMouseLeave={() => setIsWarningVisible(false)}
         ></button>
+        <div
+          className={`newscard__warning ${
+            isWarningVisible ? "newscard__warning_visible" : ""
+          }`}
+        >
+          <p>Sign in to save articles </p>
+        </div>
         <img src={images} alt={titles} className="newscard__image" />
         <div className="newscard__info">
           <h3 className="newscard__title">{titles}</h3>

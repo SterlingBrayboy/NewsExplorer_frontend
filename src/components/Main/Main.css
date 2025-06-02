@@ -30,25 +30,28 @@
 .main__error {
   grid-column: 1 / -1;
   justify-self: center;
-  /* display: flex;
-  flex-direction: column; */
-  justify-content: center;
+  max-width: 200px;
 }
 
 .main__error-title {
+  font-family: "Roboto Slab-700";
+  justify-self: center;
   font-size: 18px;
   color: #000;
-  /* position: absolute;
-  bottom: -360px;
-  left: 250px; */
 }
 
 .main__error-subtitle {
+  justify-self: center;
+  text-align: center;
   font-size: 14px;
   color: #000;
-  /* position: absolute;
-  bottom: -360px;
-  left: 250px; */
+}
+
+.main__error-pic {
+  justify-self: center;
+  height: 82.5px;
+  width: 82.5px;
+  margin-bottom: 15px;
 }
 
 .main__background {

@@ -27,16 +27,19 @@ class Api {
   }
 
   editUser(token, username) {
-    return fetch(this.baseUrl + "/users/me", {
-      method: "PATCH",
-      headers: {
-        ...this.headers,
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({
-        username,
-      }),
-    }).then(this._checkResponse);
+    return new Promise((resolve, reject) => {
+      resolve({ username });
+    });
+    // return fetch(this.baseUrl + "/users/me", {
+    //   method: "PATCH",
+    //   headers: {
+    //     ...this.headers,
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    //   body: JSON.stringify({
+    //     username,
+    //   }),
+    // }).then(this._checkResponse);
   }
 
   // renderArticles(source, title, publishedAt, description, urlToImage) {

@@ -1,11 +1,12 @@
 import "./Main.css";
 import React, { useState } from "react";
-// import Preloader from "../Preloader/Preloader";
 import About from "../About/About";
 import NewsCard from "../NewsCard/NewsCard";
 import SearchForm from "../SearchForm/SearchForm";
+import notfound from "../../images/nothing-found.svg";
+import Preloader from "../Preloader/Preloader";
 
-const Main = ({ articles, handleSearch }) => {
+const Main = ({ articles, handleSearch, hasSearched, isSearchLoading }) => {
   return (
     <main className="main">
       <div className="main__background"></div>
@@ -19,7 +20,10 @@ const Main = ({ articles, handleSearch }) => {
           <SearchForm handleSearch={handleSearch} />
         </div>
       </section>
-      <Articles articles={articles} />
+      {hasSearched && isSearchLoading ? <Preloader /> : null}
+      {hasSearched && !isSearchLoading ? (
+        <Articles articles={articles} />
+      ) : null}
       <About />
     </main>
   );
@@ -46,6 +50,7 @@ function Articles({ articles }) {
         </>
       ) : (
         <div className="main__error">
+          <img className="main__error-pic" src={notfound} alt="sad face" />
           <h3 className="main__error-title">Nothing Found</h3>
           <p className="main__error-subtitle">
             Sorry, but nothing matched your search terms.

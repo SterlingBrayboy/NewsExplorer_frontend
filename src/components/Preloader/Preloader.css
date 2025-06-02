@@ -1,6 +1,6 @@
-/* .preloader {
+.preloader {
   background-color: rgba(255, 255, 255, 0.5);
-} */
+}
 
 .preloader__circle {
   display: block;
@@ -18,11 +18,11 @@
   animation: spin 0.75s infinite linear;
 }
 
-/* @keyframes spin {
+@keyframes spin {
   100% {
     transform: rotate(360deg);
   }
-} */
+}
 
 .preloader__text {
   margin-top: 50px;

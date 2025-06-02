@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import SearchForm from "../SearchForm/SearchForm";
 import Profile from "../Profile/Profile";
-// import Preloader from "../Preloader/Preloader";
+import Preloader from "../Preloader/Preloader";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
@@ -42,6 +42,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [articles, setArticles] = useState([]);
+  const [hasSearched, setHasSearched] = useState(false);
+  const [isSearchLoading, setIsSearchLoading] = useState(false);
 
   const handleLoginModal = () => {
     setActiveModal("login");
@@ -101,6 +103,7 @@ function App() {
         })
         .then((currentUser) => {
           setCurrentUser(currentUser);
+          console.log(currentUser);
           handleCloseModal();
           setIsLoggedIn(true);
         })
@@ -135,7 +138,6 @@ function App() {
     const token = localStorage.getItem("jwt");
 
     if (token) {
-      // Call a function to verify the token
       auth
         .verifyToken(token)
         .then((user) => {
@@ -150,14 +152,17 @@ function App() {
   }, []);
 
   const handleSearch = (q) => {
+    setHasSearched(true);
+    setIsSearchLoading(true);
+
     api
       .getArticles(q)
       .then((res) => {
         setArticles(res.articles);
-        console.log(res);
-        console.log(res.articles);
+        setIsSearchLoading(false);
       })
       .catch((err) => console.error(err));
+    setIsSearchLoading(false);
   };
 
   return (
@@ -167,14 +172,20 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Main articles={articles} handleSearch={handleSearch} />}
+            element={
+              <Main
+                articles={articles}
+                handleSearch={handleSearch}
+                hasSearched={hasSearched}
+                isSearchLoading={isSearchLoading}
+              />
+            }
           />
           <Route
             path="/profile"
             element={isLoggedIn ? <Profile /> : <Navigate to="/" />}
           />
         </Routes>
-        {/* <Preloader /> */}
         <Footer />
         {activeModal === "login" && (
           <LoginModal
