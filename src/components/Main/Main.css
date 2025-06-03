@@ -54,6 +54,15 @@
   margin-bottom: 15px;
 }
 
+.main__search-results {
+  font-family: "Roboto Slab-Regular";
+  font-size: 40px;
+  padding-left: 62px;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  background-color: #f5f6f7;
+}
+
 .main__background {
   background-image: url("../../images/Background.png");
   background-position: center;

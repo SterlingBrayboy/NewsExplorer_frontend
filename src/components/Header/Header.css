@@ -49,6 +49,27 @@
   width: 176px;
 }
 
+.header__sign-out {
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  border: solid 1px;
+  font-size: 16px;
+  /* color: #fff; */
+  cursor: pointer;
+  height: 48px;
+  width: 112px;
+}
+
+.header__sign-out-icon {
+  width: 16px;
+  height: 16px;
+  /* color: #fff; */
+}
+
 .header__border {
   position: absolute;
   top: 90px;

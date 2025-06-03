@@ -3,7 +3,24 @@ import "./NewsCard.css";
 import React, { useState } from "react";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-const NewsCard = ({ article }) => {
+const NewsCard = ({ article, isLoggedIn }) => {
+  const [save, setSave] = useState(false);
+  const [isWarningVisible, setIsWarningVisible] = useState(false);
+
+  const handleSaveClick = () => {
+    if (isLoggedIn) {
+      setSave(!save);
+    }
+  };
+
+  const images = article.urlToImage;
+  const titles = article.title;
+  const description = article.description;
+  const source = article.source.name;
+
+  console.log("isLoggedIn:", isLoggedIn);
+  console.log("isWarningVisible:", isWarningVisible);
+
   //   const { currentUser } = useContext(CurrentUserContext);
   //   const isOwn = item.owner === currentUser._id;
   //   const isLiked =
@@ -15,30 +32,22 @@ const NewsCard = ({ article }) => {
   // Determine the style of the like button based on whether it's liked
   //   const cardLiked = !isLiked ? "newscard__like" : "newscard__unlike";
 
-  const [save, setSave] = useState(true);
-  const [isWarningVisible, setIsWarningVisible] = useState(false);
-
-  const images = article.urlToImage;
-  const titles = article.title;
-  const description = article.description;
-  const source = article.source.name;
-
   return (
     <section className="newscard">
-      {/* <h1 className="newscard__search-results">Search Results</h1> */}
       <div className="newscard__article">
         <button
-          className={save ? "newscard__save-button" : "newscard__save-clicked"}
-          onClick={() => setSave(!save)}
-          onMouseEnter={() => setIsWarningVisible(true)}
+          className={save ? "newscard__save-clicked" : "newscard__save-button"}
+          onClick={handleSaveClick}
+          disabled={!isLoggedIn}
+          onMouseEnter={() => !isLoggedIn && setIsWarningVisible(true)}
           onMouseLeave={() => setIsWarningVisible(false)}
         ></button>
         <div
           className={`newscard__warning ${
-            isWarningVisible ? "newscard__warning_visible" : ""
+            !isLoggedIn && isWarningVisible ? "newscard__warning_visible" : ""
           }`}
         >
-          <p>Sign in to save articles </p>
+          <p>Sign in to save articles</p>
         </div>
         <img src={images} alt={titles} className="newscard__image" />
         <div className="newscard__info">

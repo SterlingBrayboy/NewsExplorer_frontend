@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
-import SearchForm from "../SearchForm/SearchForm";
+// import SearchForm from "../SearchForm/SearchForm";
 import Profile from "../Profile/Profile";
-import Preloader from "../Preloader/Preloader";
+// import Preloader from "../Preloader/Preloader";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
@@ -113,11 +113,11 @@ function App() {
 
   // LOGOUT HANDLER
 
-  // const handleLogout = () => {
-  //   setIsLoggedIn(false);
-  //   setCurrentUser(currentUser === null);
-  //   localStorage.removeItem("jwt");
-  // };
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setCurrentUser(currentUser === null);
+    localStorage.removeItem("jwt");
+  };
 
   // EDIT PROFILE HANDLER
 
@@ -168,7 +168,11 @@ function App() {
   return (
     <CurrentUserContext.Provider value={{ currentUser }}>
       <div className="App">
-        <Header onCreateModal={handleLoginModal} />
+        <Header
+          onCreateModal={handleLoginModal}
+          isLoggedIn={isLoggedIn}
+          handleLogout={handleLogout}
+        />
         <Routes>
           <Route
             path="/"

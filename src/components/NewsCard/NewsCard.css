@@ -73,7 +73,7 @@
   width: 182px;
   font-size: 12px;
   border-radius: 10px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   left: 145px;
@@ -84,6 +84,7 @@
 }
 
 .newscard__warning_visible {
+  display: flex;
   opacity: 1; /* Fully visible */
   transform: translateX(0); /* Move to its original position */
 }
