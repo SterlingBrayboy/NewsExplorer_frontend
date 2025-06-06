@@ -32,15 +32,15 @@
   margin-left: 30px;
 }
 
-/* .header__home-button:hover {
+.header__home-button:hover {
   border-bottom: #fff solid 3px;
   line-height: 50px;
-} */
+}
 
-/* .header__saved-button:hover {
+.header__saved-button:hover {
   border-bottom: #fff solid 3px;
   line-height: 50px;
-} */
+}
 
 .header__sign-in {
   background: transparent url(../../images/Rectangle.svg) center no-repeat;
