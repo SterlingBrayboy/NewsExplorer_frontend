@@ -179,6 +179,7 @@ function App() {
             element={
               <Main
                 articles={articles}
+                isLoggedIn={isLoggedIn}
                 handleSearch={handleSearch}
                 hasSearched={hasSearched}
                 isSearchLoading={isSearchLoading}

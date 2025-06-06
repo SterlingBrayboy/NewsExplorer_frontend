@@ -21,11 +21,13 @@
 
 .header__home-button {
   background-color: none;
+  font-family: "Roboto Regular 500", sans-serif;
   font-size: 18px;
 }
 
 .header__saved-button {
   background-color: none;
+  font-family: "Roboto Regular 500", sans-serif;
   font-size: 18px;
   margin-left: 30px;
 }
@@ -57,6 +59,7 @@
   gap: 8px;
   border-radius: 100px;
   border: solid 1px;
+  font-family: "Roboto Regular 500", sans-serif;
   font-size: 16px;
   /* color: #fff; */
   cursor: pointer;

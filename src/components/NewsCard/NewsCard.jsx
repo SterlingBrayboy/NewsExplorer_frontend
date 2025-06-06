@@ -13,6 +13,12 @@ const NewsCard = ({ article, isLoggedIn }) => {
     }
   };
 
+  const handleMouseEvents = (isEntering) => {
+    if (!isLoggedIn) {
+      setIsWarningVisible(isEntering); // Show or hide the warning based on the event
+    }
+  };
+
   const images = article.urlToImage;
   const titles = article.title;
   const description = article.description;
@@ -38,13 +44,13 @@ const NewsCard = ({ article, isLoggedIn }) => {
         <button
           className={save ? "newscard__save-clicked" : "newscard__save-button"}
           onClick={handleSaveClick}
-          disabled={!isLoggedIn}
-          onMouseEnter={() => !isLoggedIn && setIsWarningVisible(true)}
-          onMouseLeave={() => setIsWarningVisible(false)}
+          // disabled={!isLoggedIn}
+          onMouseEnter={() => handleMouseEvents(true)}
+          onMouseLeave={() => handleMouseEvents(false)}
         ></button>
         <div
           className={`newscard__warning ${
-            !isLoggedIn && isWarningVisible ? "newscard__warning_visible" : ""
+            isWarningVisible ? "newscard__warning_visible" : ""
           }`}
         >
           <p>Sign in to save articles</p>

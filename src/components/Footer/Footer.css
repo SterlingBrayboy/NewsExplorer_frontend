@@ -1,5 +1,5 @@
 .footer {
-  /* font-family: "Roboto Regular"; */
+  font-family: "Roboto Slab-Regular", sans-serif;
   display: flex;
   justify-content: space-between;
   margin: 0 105px 20px 105px;

@@ -14,19 +14,18 @@
   width: 464px;
 }
 
+.about__wording {
+  font-family: "Roboto Slab Regular", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
 .about__title {
-  font-family: "Roboto Slab-Regular";
   font-size: 40px;
   margin-top: 50px;
 }
 
 .about__subtitle {
-  font-family: "Roboto Regular";
   font-size: 18px;
   margin-top: 10px;
-}
-
-.about__wording {
-  display: flex;
-  flex-direction: column;
 }
