@@ -1,19 +1,33 @@
 .footer {
   font-family: "Roboto Slab-Regular", sans-serif;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   margin: 0 105px 20px 105px;
   padding: 0 20px;
+  max-width: 1200px;
 }
 
 .footer__credits {
   color: #b6bcbf;
+  max-width: fit-content;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  /* max-width: 600px; */
+}
+
+.footer__home {
+  padding-right: 30px;
 }
 
 .footer__elements {
   display: flex;
-  flex-direction: row;
-  gap: 30px;
+  /* flex-direction: row;
+  gap: 30px; */
+  justify-content: space-between;
 }
 
 .footer__github {
@@ -22,4 +36,43 @@
 
 .footer__linkedin {
   cursor: pointer;
+}
+
+@media (max-width: 830px) {
+  .footer {
+    padding: 0%;
+  }
+
+  .footer__elements {
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  .footer__github {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer__linkedin {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer__home {
+    padding-right: 0px;
+    margin-bottom: 30px;
+  }
+
+  .footer__links {
+    display: flex;
+    justify-content: end;
+  }
+
+  .footer__buttons {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
 }

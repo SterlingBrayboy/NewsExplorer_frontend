@@ -3,6 +3,7 @@ import logo from "../../images/NewsExplorer.svg";
 import logoblk from "../../images/NewsExplorerblk.svg";
 import exitWht from "../../images/exit-wht.svg";
 import exitBlk from "../../images/exit.svg";
+import hamburgMenu from "../../images/hamburg-menu.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = ({ onCreateModal, isLoggedIn, handleLogout }) => {
@@ -15,14 +16,13 @@ const Header = ({ onCreateModal, isLoggedIn, handleLogout }) => {
   return (
     <header className="header">
       <img
-        className={`header__logo ${
-          isProfilePage ? "header__logo--profile" : ""
-        }`}
+        className="header__logo"
         src={isProfilePage ? logoblk : logo}
         alt="logo"
+        onClick={() => navigate("/")}
       />
       <div
-        className={`header__elements ${isProfilePage ? "header--profile" : ""}`}
+        className={`header__elements ${isProfilePage ? "header__profile" : ""}`}
       >
         {isLoggedIn ? (
           <>
@@ -52,6 +52,7 @@ const Header = ({ onCreateModal, isLoggedIn, handleLogout }) => {
                 className="header__sign-out-icon"
               />
             </button>
+            <img className="header__hamburg-menu" src={hamburgMenu} />
           </>
         ) : (
           <>
@@ -65,6 +66,7 @@ const Header = ({ onCreateModal, isLoggedIn, handleLogout }) => {
             >
               Sign In
             </button>
+            <img className="header__hamburg-menu" src={hamburgMenu} />
           </>
         )}
       </div>

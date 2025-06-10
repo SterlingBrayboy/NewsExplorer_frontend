@@ -3,9 +3,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
-// import SearchForm from "../SearchForm/SearchForm";
 import Profile from "../Profile/Profile";
-// import Preloader from "../Preloader/Preloader";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
@@ -44,6 +42,7 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
   const [isSearchLoading, setIsSearchLoading] = useState(false);
+  // const [savedArticles, setSavedArticles] = useState([]);
 
   const handleLoginModal = () => {
     setActiveModal("login");
@@ -60,6 +59,14 @@ function App() {
   const handleSignUpSuccess = () => {
     setActiveModal("success");
   };
+
+  // Check if the article is already saved
+
+  // const handleSaveArticle = (article) => {
+  //   if (!savedArticles.some((saved) => saved.id === article.id)) {
+  //     setSavedArticles([...savedArticles, article]);
+  //   }
+  // };
 
   // CLOSE MODAL WITH ESC METHOD
 
@@ -183,12 +190,19 @@ function App() {
                 handleSearch={handleSearch}
                 hasSearched={hasSearched}
                 isSearchLoading={isSearchLoading}
+                // handleSaveArticle={handleSaveArticle}
               />
             }
           />
           <Route
             path="/profile"
-            element={isLoggedIn ? <Profile /> : <Navigate to="/" />}
+            element={
+              isLoggedIn ? (
+                <Profile articles={articles} isLoggedIn={isLoggedIn} />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
           />
         </Routes>
         <Footer />

@@ -7,6 +7,7 @@
   color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: absolute;
   top: 20%;
   height: 128px;
@@ -66,4 +67,37 @@
   background-repeat: no-repeat;
   height: 600px;
   background-size: cover;
+}
+
+@media (max-width: 930px) {
+  .main__container {
+    width: 500px;
+    height: 200px;
+  }
+
+  .main__title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .main__subtitle {
+    font-size: 18px;
+    max-width: 452px;
+  }
+}
+
+@media (max-width: 530px) {
+  .main__container {
+    width: 288px;
+    height: 200px;
+  }
+
+  .main__title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .main__subtitle {
+    font-size: 18px;
+  }
 }

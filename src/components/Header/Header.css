@@ -1,7 +1,5 @@
 .header__elements {
   display: flex;
-  /* flex-direction: row;
-  justify-content: flex-end; */
   margin-top: 30px;
   margin-right: 104px;
   gap: 30px;
@@ -17,29 +15,35 @@
   position: absolute;
   top: 42px;
   left: 104px;
+  cursor: pointer;
 }
 
 .header__home-button {
-  background-color: none;
+  background-color: transparent;
+  color: #fff;
+  border: none;
   font-family: "Roboto Regular 500", sans-serif;
   font-size: 18px;
+  /* transition: opacity 0.3s ease-in-out; */
 }
 
 .header__saved-button {
-  background-color: none;
+  background-color: transparent;
+  color: #fff;
+  border: none;
   font-family: "Roboto Regular 500", sans-serif;
   font-size: 18px;
   margin-left: 30px;
 }
 
 .header__home-button:hover {
-  border-bottom: #fff solid 3px;
-  line-height: 50px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid #fff;
 }
 
 .header__saved-button:hover {
-  border-bottom: #fff solid 3px;
-  line-height: 50px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid #fff;
 }
 
 .header__sign-in {
@@ -73,6 +77,10 @@
   /* color: #fff; */
 }
 
+.header__hamburg-menu {
+  display: none;
+}
+
 .header__border {
   position: absolute;
   top: 90px;
@@ -89,6 +97,37 @@
   opacity: 0.2;
 } */
 
-.header--profile {
-  color: #000;
+.header__profile .header__home-button,
+.header__profile .header__saved-button,
+.header__profile .header__sign-out {
+  color: #000; /* Change button text color to black */
+}
+
+@media (max-width: 815px) {
+  .header__home-button {
+    display: none;
+  }
+
+  .header__sign-in {
+    display: none;
+  }
+
+  .header__hamburg-menu {
+    display: flex; /* Show hamburger menu */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .header__sign-out {
+    display: none;
+  }
+
+  .header__sign-out-icon {
+    display: none;
+  }
+
+  .header__saved-button {
+    display: none;
+  }
 }

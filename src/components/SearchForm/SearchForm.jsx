@@ -16,17 +16,21 @@ const SearchForm = ({ handleSearch }) => {
 
   return (
     <section className="search">
-      <form className="search__form" onSubmit={handleSubmit}>
-        <input
-          className="search__input"
-          placeholder="Enter topic"
-          type="text"
-          onChange={handleInputChange}
-        ></input>
-        <button className="search__button" type="submit">
-          Search
-        </button>
-      </form>
+      <div className="search__elements">
+        <form className="search__form" onSubmit={handleSubmit}>
+          <input
+            className="search__input"
+            placeholder="Enter topic"
+            type="text"
+            onChange={handleInputChange}
+          ></input>
+          <div>
+            <button className="search__button" type="submit">
+              Search
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
   );
 };

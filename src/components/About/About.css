@@ -5,7 +5,7 @@
   margin-left: 100px;
   margin-bottom: 40px;
   color: black;
-  width: 1000px;
+  max-width: 1000px;
   gap: 50px;
 }
 
@@ -28,4 +28,43 @@
 .about__subtitle {
   font-size: 18px;
   margin-top: 10px;
+}
+
+@media (max-width: 1100px) {
+  .about__title {
+    font-size: 30px;
+    margin: 0;
+  }
+
+  .about__subtitle {
+    height: 168px;
+    width: 424px;
+  }
+
+  .about__image {
+    height: 232px;
+    width: 232px;
+  }
+}
+
+@media (max-width: 830px) {
+  .about {
+    flex-direction: column;
+    max-width: 830px;
+    display: grid;
+    justify-items: center;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  .about__wording {
+    display: flex;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 515px) {
+  .about__subtitle {
+    max-width: 288px;
+  }
 }

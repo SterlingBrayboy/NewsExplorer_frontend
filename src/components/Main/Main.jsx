@@ -12,6 +12,7 @@ const Main = ({
   hasSearched,
   isSearchLoading,
   isLoggedIn,
+  // handleSaveArticle,
 }) => {
   return (
     <main className="main">
@@ -36,7 +37,7 @@ const Main = ({
 };
 
 export default Main;
-function Articles({ articles, isLoggedIn }) {
+function Articles({ articles, isLoggedIn, handleSaveArticle }) {
   const [numToShow, setNumToShow] = useState(6);
   return (
     <section className="articles-section">
@@ -49,7 +50,12 @@ function Articles({ articles, isLoggedIn }) {
         {articles.length > 0 ? (
           <>
             {articles.slice(0, numToShow).map((article, index) => (
-              <NewsCard key={index} article={article} isLoggedIn={isLoggedIn} />
+              <NewsCard
+                key={index}
+                article={article}
+                isLoggedIn={isLoggedIn}
+                // handleSaveArticle={handleSaveArticle}
+              />
             ))}
             {numToShow < articles.length && (
               <button
