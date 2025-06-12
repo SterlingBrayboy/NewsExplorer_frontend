@@ -166,10 +166,12 @@ function App() {
       .getArticles(q)
       .then((res) => {
         setArticles(res.articles);
-        setIsSearchLoading(false);
+        setIsSearchLoading(true);
       })
-      .catch((err) => console.error(err));
-    setIsSearchLoading(false);
+      .catch((err) => console.error(err))
+      .finally(() => {
+        setIsSearchLoading(false);
+      });
   };
 
   return (
