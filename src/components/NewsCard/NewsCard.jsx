@@ -39,7 +39,6 @@ const NewsCard = ({ article, isLoggedIn }) => {
         <button
           className={save ? "newscard__save-clicked" : "newscard__save-button"}
           onClick={handleSaveClick}
-          // disabled={!isLoggedIn}
           onMouseEnter={() => handleMouseEvents(true)}
           onMouseLeave={() => handleMouseEvents(false)}
         ></button>

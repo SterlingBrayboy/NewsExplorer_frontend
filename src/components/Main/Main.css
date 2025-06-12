@@ -31,10 +31,6 @@
   max-width: 200px;
 }
 
-.main__loading {
-  background-color: #fff;
-}
-
 .main__error-title {
   font-family: "Roboto Slab-700", sans-serif;
   justify-self: center;
@@ -46,7 +42,7 @@
   justify-self: center;
   text-align: center;
   font-size: 14px;
-  color: #000;
+  color: #b6bcbf;
 }
 
 .main__error-pic {

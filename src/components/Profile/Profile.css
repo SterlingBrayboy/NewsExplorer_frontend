@@ -3,7 +3,7 @@
 }
 
 .profile__container {
-  margin-left: 125px;
+  margin-left: 0;
 }
 
 .profile__title {
@@ -11,6 +11,7 @@
   color: #1a1b2280;
   opacity: 0.5;
   margin-bottom: 15px;
+  margin-left: 125px;
 }
 
 .profile__no-articles {
