@@ -42,7 +42,7 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
   const [isSearchLoading, setIsSearchLoading] = useState(false);
-  // const [savedArticles, setSavedArticles] = useState([]);
+  const [savedArticles, setSavedArticles] = useState([]);
 
   const handleLoginModal = () => {
     setActiveModal("login");
@@ -62,11 +62,11 @@ function App() {
 
   // Check if the article is already saved
 
-  // const handleSaveArticle = (article) => {
-  //   if (!savedArticles.some((saved) => saved.id === article.id)) {
-  //     setSavedArticles([...savedArticles, article]);
-  //   }
-  // };
+  const handleSaveArticle = (article) => {
+    if (!savedArticles.some((saved) => saved._id === article._id)) {
+      setSavedArticles([...savedArticles, article]);
+    }
+  };
 
   // CLOSE MODAL WITH ESC METHOD
 
@@ -192,7 +192,7 @@ function App() {
                 handleSearch={handleSearch}
                 hasSearched={hasSearched}
                 isSearchLoading={isSearchLoading}
-                // handleSaveArticle={handleSaveArticle}
+                handleSaveArticle={handleSaveArticle}
               />
             }
           />
@@ -200,7 +200,7 @@ function App() {
             path="/profile"
             element={
               isLoggedIn ? (
-                <Profile articles={articles} isLoggedIn={isLoggedIn} />
+                <Profile articles={savedArticles} isLoggedIn={isLoggedIn} />
               ) : (
                 <Navigate to="/" />
               )

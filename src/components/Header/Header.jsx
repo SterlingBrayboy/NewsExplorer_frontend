@@ -6,7 +6,12 @@ import exitBlk from "../../images/exit.svg";
 import hamburgMenu from "../../images/hamburg-menu.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Header = ({ onCreateModal, isLoggedIn, handleLogout }) => {
+const Header = ({
+  onCreateModal,
+  isLoggedIn,
+  handleLogout,
+  handleLoginModal,
+}) => {
   const location = useLocation();
   const navigate = useNavigate();
   const isProfilePage = location.pathname === "/profile";
@@ -52,7 +57,11 @@ const Header = ({ onCreateModal, isLoggedIn, handleLogout }) => {
                 className="header__sign-out-icon"
               />
             </button>
-            <img className="header__hamburg-menu" src={hamburgMenu} />
+            <img
+              className="header__hamburg-menu"
+              src={hamburgMenu}
+              onClick={onCreateModal}
+            />
           </>
         ) : (
           <>
@@ -66,7 +75,11 @@ const Header = ({ onCreateModal, isLoggedIn, handleLogout }) => {
             >
               Sign In
             </button>
-            <img className="header__hamburg-menu" src={hamburgMenu} />
+            <img
+              className="header__hamburg-menu"
+              src={hamburgMenu}
+              onClick={onCreateModal}
+            />
           </>
         )}
       </div>

@@ -10,9 +10,7 @@ const About = () => {
         <p className="about__subtitle">
           Fullstack Software Engineer with 2 years of experience building web
           applications using the MERN stack (MongoDB, Express, React, Node.js)
-          and Git, with deployment experience on Google Cloud. Curious about AI
-          and eager to integrate emerging technologies into modern web
-          solutions.
+          and Git, with deployment experience on Google Cloud.
         </p>
       </div>
     </section>

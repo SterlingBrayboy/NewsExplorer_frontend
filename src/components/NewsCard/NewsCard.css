@@ -185,3 +185,15 @@
     width: 160px; /* Adjust width for smaller screens */
   }
 }
+
+@media (max-width: 419px) {
+  .newscard__article {
+    grid-column: 1 / -1;
+    justify-self: center;
+    height: 440px;
+    width: 250px;
+  }
+  .newscard__image {
+    width: 250px;
+  }
+}

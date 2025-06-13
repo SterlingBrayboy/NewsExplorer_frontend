@@ -65,7 +65,6 @@
   border: solid 1px;
   font-family: "Roboto Regular 500", sans-serif;
   font-size: 16px;
-  /* color: #fff; */
   cursor: pointer;
   height: 48px;
   width: 112px;
@@ -74,11 +73,23 @@
 .header__sign-out-icon {
   width: 16px;
   height: 16px;
-  /* color: #fff; */
 }
 
 .header__hamburg-menu {
   display: none;
+}
+
+.header__hamburg-modal {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .header__border {

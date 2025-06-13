@@ -12,7 +12,7 @@ const Main = ({
   hasSearched,
   isSearchLoading,
   isLoggedIn,
-  // handleSaveArticle,
+  handleSaveArticle,
 }) => {
   return (
     <main className="main">
@@ -29,7 +29,11 @@ const Main = ({
       </section>
       {hasSearched && isSearchLoading ? <Preloader /> : null}
       {hasSearched && !isSearchLoading ? (
-        <Articles articles={articles} isLoggedIn={isLoggedIn} />
+        <Articles
+          articles={articles}
+          isLoggedIn={isLoggedIn}
+          handleSaveArticle={handleSaveArticle}
+        />
       ) : null}
       <About />
     </main>
@@ -54,7 +58,7 @@ function Articles({ articles, isLoggedIn, handleSaveArticle }) {
                 key={index}
                 article={article}
                 isLoggedIn={isLoggedIn}
-                // handleSaveArticle={handleSaveArticle}
+                handleSaveArticle={handleSaveArticle}
               />
             ))}
             {numToShow < articles.length && (
