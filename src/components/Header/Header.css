@@ -11,10 +11,10 @@
 
 .header__logo {
   height: 24px;
-  width: 200px;
+  max-width: 200px;
   position: absolute;
   top: 42px;
-  left: 104px;
+  margin-left: 104px;
   cursor: pointer;
 }
 
@@ -124,9 +124,10 @@
   }
 
   .header__hamburg-menu {
-    display: flex; /* Show hamburger menu */
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    top: 12px;
+    display: flex;
+    left: 70px;
     cursor: pointer;
   }
 
@@ -140,5 +141,9 @@
 
   .header__saved-button {
     display: none;
+  }
+
+  .header__logo {
+    margin-left: 24px;
   }
 }

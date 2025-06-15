@@ -3,19 +3,32 @@ import "./NewsCard.css";
 import React, { useState } from "react";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-const NewsCard = ({ article, isLoggedIn }) => {
+const NewsCard = ({
+  article,
+  isLoggedIn,
+  handleSaveArticle,
+  handleDeleteArticle,
+  isProfilePage,
+}) => {
   const [save, setSave] = useState(false);
   const [isWarningVisible, setIsWarningVisible] = useState(false);
 
   const handleSaveClick = () => {
     if (isLoggedIn) {
       setSave(!save);
+      handleSaveArticle(article);
+    } else {
+      setIsWarningVisible(true);
     }
+  };
+
+  const handleDeleteClick = () => {
+    handleDeleteArticle(article); // Call delete function
   };
 
   const handleMouseEvents = (isEntering) => {
     if (!isLoggedIn) {
-      setIsWarningVisible(isEntering); // Show or hide the warning based on the event
+      setIsWarningVisible(isEntering);
     }
   };
 
@@ -36,12 +49,21 @@ const NewsCard = ({ article, isLoggedIn }) => {
   return (
     <section className="newscard">
       <div className="newscard__article">
-        <button
-          className={save ? "newscard__save-clicked" : "newscard__save-button"}
-          onClick={handleSaveClick}
-          onMouseEnter={() => handleMouseEvents(true)}
-          onMouseLeave={() => handleMouseEvents(false)}
-        ></button>
+        {isProfilePage ? (
+          <button
+            className="newscard__delete-button"
+            onClick={handleDeleteClick}
+          ></button>
+        ) : (
+          <button
+            className={
+              save ? "newscard__save-clicked" : "newscard__save-button"
+            }
+            onClick={handleSaveClick}
+            onMouseEnter={() => handleMouseEvents(true)}
+            onMouseLeave={() => handleMouseEvents(false)}
+          ></button>
+        )}
         <div
           className={`newscard__warning ${
             isWarningVisible ? "newscard__warning_visible" : ""

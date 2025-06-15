@@ -1,10 +1,7 @@
 .footer {
   font-family: "Roboto Slab-Regular", sans-serif;
-  /* display: flex;
-  justify-content: space-between; */
   margin: 0 105px 20px 105px;
   padding: 0 20px;
-  max-width: 1200px;
 }
 
 .footer__credits {
@@ -16,7 +13,13 @@
   display: flex;
   flex-direction: row;
   gap: 30px;
-  /* max-width: 600px; */
+  margin-bottom: 30px;
+}
+
+.footer__icons {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
 .footer__home {
@@ -25,8 +28,6 @@
 
 .footer__elements {
   display: flex;
-  /* flex-direction: row;
-  gap: 30px; */
   justify-content: space-between;
 }
 
@@ -45,8 +46,8 @@
 
   .footer__elements {
     /* width: 100%; */
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     flex-direction: column-reverse;
   }
 
@@ -65,9 +66,16 @@
     margin-bottom: 30px;
   }
 
+  .footer__icons {
+    display: flex;
+    justify-content: flex-end;
+    max-width: fit-content;
+  }
+
   .footer__links {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    /* max-width: fit-content; */
   }
 
   .footer__buttons {

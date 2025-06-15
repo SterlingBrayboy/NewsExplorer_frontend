@@ -8,7 +8,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { newsApiBaseUrl } from "../../utils/newsApi";
 
 import Api from "../../utils/Api";
@@ -36,6 +36,9 @@ const auth = new Auth({
 // }
 
 function App() {
+  const location = useLocation();
+  const isProfilePage = location.pathname === "/profile";
+
   const [activeModal, setActiveModal] = useState(null);
   const [currentUser, setCurrentUser] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -63,9 +66,15 @@ function App() {
   // Check if the article is already saved
 
   const handleSaveArticle = (article) => {
-    if (!savedArticles.some((saved) => saved._id === article._id)) {
+    if (!savedArticles.some((saved) => saved.title === article.title)) {
       setSavedArticles([...savedArticles, article]);
     }
+  };
+
+  const handleDeleteArticle = (article) => {
+    setSavedArticles(
+      savedArticles.filter((saved) => saved.title !== article.title)
+    ); // Remove the article
   };
 
   // CLOSE MODAL WITH ESC METHOD
@@ -181,6 +190,7 @@ function App() {
           onCreateModal={handleLoginModal}
           isLoggedIn={isLoggedIn}
           handleLogout={handleLogout}
+          isProfilePage={isProfilePage}
         />
         <Routes>
           <Route
@@ -200,7 +210,12 @@ function App() {
             path="/profile"
             element={
               isLoggedIn ? (
-                <Profile articles={savedArticles} isLoggedIn={isLoggedIn} />
+                <Profile
+                  articles={savedArticles}
+                  isLoggedIn={isLoggedIn}
+                  handleDeleteArticle={handleDeleteArticle}
+                  isProfilePage={isProfilePage}
+                />
               ) : (
                 <Navigate to="/" />
               )

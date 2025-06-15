@@ -18,8 +18,10 @@ const Footer = () => {
             </button>
             <button type="button">TripleTen</button>
           </div>
-          <img className="footer__github" src={github} alt="github" />
-          <img className="footer__linkedin" src={linkedIn} alt="linkedIn" />
+          <div className="footer__icons">
+            <img className="footer__github" src={github} alt="github" />
+            <img className="footer__linkedin" src={linkedIn} alt="linkedIn" />
+          </div>
         </div>
       </div>
     </footer>

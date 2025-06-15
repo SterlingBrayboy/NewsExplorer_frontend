@@ -4,17 +4,16 @@ import logoblk from "../../images/NewsExplorerblk.svg";
 import exitWht from "../../images/exit-wht.svg";
 import exitBlk from "../../images/exit.svg";
 import hamburgMenu from "../../images/hamburg-menu.svg";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({
   onCreateModal,
   isLoggedIn,
   handleLogout,
+  isProfilePage,
   handleLoginModal,
 }) => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const isProfilePage = location.pathname === "/profile";
 
   console.log("isLoggedIn:", isLoggedIn);
 
