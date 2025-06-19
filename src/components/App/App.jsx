@@ -8,7 +8,13 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  Navigate,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import { newsApiBaseUrl } from "../../utils/newsApi";
 
 import Api from "../../utils/Api";
@@ -37,6 +43,7 @@ const auth = new Auth({
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   const isProfilePage = location.pathname === "/profile";
 
   const [activeModal, setActiveModal] = useState(null);
@@ -46,9 +53,11 @@ function App() {
   const [hasSearched, setHasSearched] = useState(false);
   const [isSearchLoading, setIsSearchLoading] = useState(false);
   const [savedArticles, setSavedArticles] = useState([]);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const handleLoginModal = () => {
     setActiveModal("login");
+    setIsLoginModalOpen(!isLoginModalOpen);
   };
 
   const handleRegisterModal = () => {
@@ -57,6 +66,7 @@ function App() {
 
   const handleCloseModal = () => {
     setActiveModal(null);
+    setIsLoginModalOpen(false);
   };
 
   const handleSignUpSuccess = () => {
@@ -191,6 +201,8 @@ function App() {
           isLoggedIn={isLoggedIn}
           handleLogout={handleLogout}
           isProfilePage={isProfilePage}
+          isLoginModalOpen={isLoginModalOpen}
+          navigate={navigate}
         />
         <Routes>
           <Route
@@ -222,7 +234,7 @@ function App() {
             }
           />
         </Routes>
-        <Footer />
+        <Footer navigate={navigate} />
         {activeModal === "login" && (
           <LoginModal
             handleCloseModal={handleCloseModal}

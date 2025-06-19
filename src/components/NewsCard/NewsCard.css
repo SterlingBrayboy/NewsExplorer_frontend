@@ -13,10 +13,10 @@
 }
 
 .newscard__source {
-  /* position: absolute; */
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  right: 20px;
   font-family: "Roboto Regular";
   color: #b6bcbf;
   font-size: 16px;
@@ -31,6 +31,7 @@
   width: 100%;
   max-width: 400px;
   height: 576px;
+  overflow: hidden;
 }
 
 .newscard__save-button {
@@ -162,6 +163,8 @@
   padding-right: 20px;
   color: black;
   font-size: 16px;
+  max-height: 80px;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 1088px) {
@@ -204,16 +207,17 @@
     top: 20px;
     width: 160px; /* Adjust width for smaller screens */
   }
-}
 
-@media (max-width: 419px) {
-  .newscard__article {
-    grid-column: 1 / -1;
-    justify-self: center;
-    height: 440px;
-    width: 250px;
-  }
-  .newscard__image {
-    width: 250px;
+  @media (max-width: 859px) {
+    .newscard__article {
+      grid-column: 1 / -1;
+      justify-self: center;
+      gap: 0;
+      height: 440px;
+      width: 250px;
+    }
+    .newscard__image {
+      width: 250px;
+    }
   }
 }

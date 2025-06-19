@@ -45,7 +45,6 @@ function Articles({ articles, isLoggedIn, handleSaveArticle }) {
   const [numToShow, setNumToShow] = useState(6);
   return (
     <section className="articles-section">
-      {/* Place the Search Results heading in its own container */}
       {articles.length > 0 && (
         <h3 className="main__search-results">Search Results</h3>
       )}

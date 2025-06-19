@@ -4,7 +4,6 @@ import logoblk from "../../images/NewsExplorerblk.svg";
 import exitWht from "../../images/exit-wht.svg";
 import exitBlk from "../../images/exit.svg";
 import hamburgMenu from "../../images/hamburg-menu.svg";
-import { useNavigate } from "react-router-dom";
 
 const Header = ({
   onCreateModal,
@@ -12,9 +11,9 @@ const Header = ({
   handleLogout,
   isProfilePage,
   handleLoginModal,
+  isLoginModalOpen,
+  navigate,
 }) => {
-  const navigate = useNavigate();
-
   console.log("isLoggedIn:", isLoggedIn);
 
   return (
@@ -25,7 +24,7 @@ const Header = ({
         alt="logo"
         onClick={() => navigate("/")}
       />
-      <div
+      <nav
         className={`header__elements ${isProfilePage ? "header__profile" : ""}`}
       >
         {isLoggedIn ? (
@@ -56,11 +55,13 @@ const Header = ({
                 className="header__sign-out-icon"
               />
             </button>
-            <img
-              className="header__hamburg-menu"
-              src={hamburgMenu}
-              onClick={onCreateModal}
-            />
+            {!isLoginModalOpen && (
+              <img
+                className="header__hamburg-menu"
+                src={hamburgMenu}
+                onClick={onCreateModal}
+              />
+            )}
           </>
         ) : (
           <>
@@ -74,14 +75,16 @@ const Header = ({
             >
               Sign In
             </button>
-            <img
-              className="header__hamburg-menu"
-              src={hamburgMenu}
-              onClick={onCreateModal}
-            />
+            {!isLoginModalOpen && (
+              <img
+                className="header__hamburg-menu"
+                src={hamburgMenu}
+                onClick={onCreateModal}
+              />
+            )}
           </>
         )}
-      </div>
+      </nav>
       <div className="header__border"></div>
     </header>
   );
