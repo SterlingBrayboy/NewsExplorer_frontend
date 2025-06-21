@@ -19,8 +19,8 @@ const Profile = ({
             : "You have no saved articles."}
         </h1>
         <div
-          className={`newscard__articles ${
-            articles.length === 0 ? "newscard__articles--empty" : ""
+          className={`profile__articles ${
+            articles.length === 0 ? "profile__articles-empty" : ""
           }`}
         >
           {articles.length > 0

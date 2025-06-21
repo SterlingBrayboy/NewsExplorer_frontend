@@ -1,9 +1,10 @@
 import "./Header.css";
 import logo from "../../images/NewsExplorer.svg";
-import logoblk from "../../images/NewsExplorerblk.svg";
+import logoBlk from "../../images/NewsExplorerblk.svg";
 import exitWht from "../../images/exit-wht.svg";
 import exitBlk from "../../images/exit.svg";
-import hamburgMenu from "../../images/hamburg-menu.svg";
+import menu from "../../images/menu.svg";
+import menuBlk from "../../images/menu-blk.svg";
 
 const Header = ({
   onCreateModal,
@@ -20,7 +21,7 @@ const Header = ({
     <header className="header">
       <img
         className="header__logo"
-        src={isProfilePage ? logoblk : logo}
+        src={isProfilePage ? logoBlk : logo}
         alt="logo"
         onClick={() => navigate("/")}
       />
@@ -57,8 +58,8 @@ const Header = ({
             </button>
             {!isLoginModalOpen && (
               <img
-                className="header__hamburg-menu"
-                src={hamburgMenu}
+                className="header__menu"
+                src={isProfilePage ? menuBlk : menu}
                 onClick={onCreateModal}
               />
             )}
@@ -77,15 +78,19 @@ const Header = ({
             </button>
             {!isLoginModalOpen && (
               <img
-                className="header__hamburg-menu"
-                src={hamburgMenu}
+                className="header__menu"
+                src={isProfilePage ? menuBlk : menu}
                 onClick={onCreateModal}
               />
             )}
           </>
         )}
       </nav>
-      <div className="header__border"></div>
+      <div
+        className={`header__border ${
+          isProfilePage ? "header__border-black" : ""
+        }`}
+      ></div>
     </header>
   );
 };

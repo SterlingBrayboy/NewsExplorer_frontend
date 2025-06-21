@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-.newscard__articles--empty {
+.newscard__articles-empty {
   background-color: #fff;
 }
 
@@ -164,28 +164,29 @@
   color: black;
   font-size: 16px;
   max-height: 80px;
+  overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box; /* Enable multi-line truncation */
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
 }
 
-@media (max-width: 1088px) {
+@media (max-width: 1250px) {
   .newscard__articles {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(200px, 1fr)
-    ); /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding-top: 10px;
     padding-bottom: 15px;
     justify-content: center;
-    max-width: 100%; /* Prevent overflow */
-    overflow-x: hidden; /* Hide horizontal overflow */
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .newscard__article {
     height: 420px;
     width: 224px;
-    max-width: 100%; /* Prevent overflow */
+    max-width: 100%;
   }
 
   .newscard__title {
@@ -195,7 +196,7 @@
   .newscard__image {
     height: 150px;
     width: 224px;
-    max-width: 100%; /* Prevent overflow */
+    max-width: 100%;
   }
 
   .newscard__save-button {
@@ -203,9 +204,9 @@
   }
 
   .newscard__warning {
-    left: 5px; /* Prevent overflow */
+    left: 5px;
     top: 20px;
-    width: 160px; /* Adjust width for smaller screens */
+    width: 160px;
   }
 
   @media (max-width: 859px) {

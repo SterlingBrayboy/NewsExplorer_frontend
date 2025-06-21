@@ -1,7 +1,9 @@
 .footer {
   font-family: "Roboto Slab Regular", sans-serif;
-  margin: 0 105px 20px 105px;
+  margin: 0 auto;
   padding: 0 20px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .footer__credits {
@@ -81,9 +83,8 @@
   }
 
   .footer__elements {
-    /* width: 100%; */
-    /* display: flex;
-    justify-content: center; */
+    margin-left: 70px;
+    margin-right: 70px;
     flex-direction: column-reverse;
   }
 
@@ -95,15 +96,6 @@
   .footer__linkedin {
     width: 24px;
     height: 24px;
-  }
-
-  /* .footer__home {
-    padding-right: 0px;
-    margin-bottom: 30px;
-  } */
-
-  .footer__buttons {
-    margin-right: 50px;
   }
 
   .footer__icons {
@@ -123,5 +115,12 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 460px) {
+  .footer__elements {
+    margin-left: 30px;
+    margin-right: 30px;
   }
 }

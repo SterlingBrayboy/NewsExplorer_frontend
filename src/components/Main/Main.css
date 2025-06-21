@@ -11,7 +11,7 @@
   position: absolute;
   top: 20%;
   height: 128px;
-  width: 608px;
+  max-width: 608px;
 }
 
 .main__title {
@@ -73,15 +73,16 @@
   .main__container {
     width: 500px;
     height: 200px;
+    justify-content: start;
   }
 
   .main__title {
-    font-size: 36px;
+    font-size: 45px;
     line-height: 40px;
+    margin-left: 20px;
   }
 
   .main__subtitle {
-    font-size: 18px;
     max-width: 452px;
   }
 }
@@ -95,6 +96,7 @@
   .main__title {
     font-size: 36px;
     line-height: 40px;
+    margin-left: 0;
   }
 
   .main__subtitle {
