@@ -49,7 +49,7 @@ function Articles({ articles, isLoggedIn, handleSaveArticle }) {
         <h3 className="main__search-results">Search Results</h3>
       )}
 
-      <div className="newscard__articles">
+      <div className="main__articles">
         {articles.length > 0 ? (
           <>
             {articles.slice(0, numToShow).map((article, index) => (

@@ -61,12 +61,35 @@
   background-color: #f5f6f7;
 }
 
+.main__articles {
+  background-color: #f5f6f7;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 400px);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+}
+
 .main__background {
   background-image: url("../../images/Background.png");
   background-position: center;
   background-repeat: no-repeat;
   height: 600px;
   background-size: cover;
+}
+
+@media (max-width: 1250px) {
+  .main__articles {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding-top: 10px;
+    padding-bottom: 15px;
+    justify-content: center;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 930px) {
