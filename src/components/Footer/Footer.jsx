@@ -19,7 +19,7 @@ const handleLinkedIn = () => {
 const Footer = ({ navigate }) => {
   return (
     <footer className="footer">
-      <div className="footer__elements">
+      <nav className="footer__elements">
         <div className="footer__credits">
           © {currentYear} Supersite, Powered by News API
         </div>
@@ -55,7 +55,7 @@ const Footer = ({ navigate }) => {
             />
           </div>
         </div>
-      </div>
+      </nav>
     </footer>
   );
 };
