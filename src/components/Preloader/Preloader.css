@@ -29,6 +29,7 @@
 .preloader__text {
   padding-top: 160px;
   color: #b6bcbf;
+  text-align: center;
   justify-self: center;
   margin-left: 15px;
 }

@@ -145,21 +145,6 @@ function App() {
     localStorage.removeItem("jwt");
   };
 
-  // EDIT PROFILE HANDLER
-
-  // const handleEditProfile = ({ username, avatar }) => {
-  //   const token = localStorage.getItem("jwt");
-  //   if (username) {
-  //     api
-  //       .editUser(token, username)
-  //       .then((res) => {
-  //         handleCloseModal();
-  //         setCurrentUser(res);
-  //       })
-  //       .catch((err) => console.error(err));
-  //   }
-  // };
-
   useEffect(() => {
     const token = localStorage.getItem("jwt");
 
@@ -178,12 +163,14 @@ function App() {
   }, []);
 
   const handleSearch = (q) => {
+    console.log("Search query:", q);
     setHasSearched(true);
     setIsSearchLoading(true);
 
     api
       .getArticles(q)
       .then((res) => {
+        console.log("API response:", res);
         setArticles(res.articles);
         setIsSearchLoading(true);
       })

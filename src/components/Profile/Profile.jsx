@@ -10,6 +10,7 @@ const Profile = ({
   return (
     <section className="profile">
       <div className="profile__container">
+        <p className="profile__pretext">Saved articles</p>
         <h1 className="profile__title">
           {" "}
           {articles.length > 0

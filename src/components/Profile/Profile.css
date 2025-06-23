@@ -6,19 +6,24 @@
   padding-left: 0;
 }
 
+.profile__pretext {
+  font-size: 16px;
+  color: #1a1b2280;
+  font-family: "Roboto Regular", sans-serif;
+  padding-top: 20px;
+  margin-left: 15px;
+}
+
 .profile__title {
   font-size: 18px;
-  color: #1a1b2280;
-  opacity: 0.5;
+  font-family: "Roboto Slab Regular", sans-serif;
+  color: #000;
   font-size: 40px;
+  padding-top: 10px;
   margin-bottom: 15px;
   margin-left: 15px;
   position: relative;
   z-index: 1;
-}
-
-.profile__articles-empty {
-  background-color: #fff;
 }
 
 .profile__articles {
@@ -30,6 +35,10 @@
   padding-bottom: 30px;
   margin-bottom: 30px;
   justify-content: center;
+}
+
+.profile__articles-empty {
+  background-color: #fff;
 }
 
 @media (max-width: 1250px) {

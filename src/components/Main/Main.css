@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 20%;
+  top: 18%;
   height: 128px;
   max-width: 608px;
 }
@@ -18,7 +18,7 @@
   font-family: "Roboto Slab Regular", sans-serif;
   line-height: 64px;
   font-size: 60px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 .main__subtitle {
@@ -33,22 +33,23 @@
 
 .main__error-title {
   font-family: "Roboto Slab Bold", sans-serif;
-  justify-self: center;
+  text-align: center;
   font-size: 18px;
   color: #000;
 }
 
 .main__error-subtitle {
-  justify-self: center;
   text-align: center;
   font-size: 14px;
   color: #b6bcbf;
 }
 
 .main__error-pic {
+  display: flex;
   justify-self: center;
   height: 82.5px;
   width: 82.5px;
+  margin-right: 0;
   margin-bottom: 15px;
 }
 
@@ -104,7 +105,7 @@
   }
 }
 
-@media (max-width: 930px) {
+@media (max-width: 768px) {
   .main__container {
     width: 500px;
     height: 200px;
@@ -124,12 +125,12 @@
 
 @media (max-width: 530px) {
   .main__container {
-    width: 288px;
+    max-width: 290px;
     height: 200px;
   }
 
   .main__title {
-    font-size: 36px;
+    font-size: 34px;
     line-height: 40px;
     margin-left: 0;
   }
