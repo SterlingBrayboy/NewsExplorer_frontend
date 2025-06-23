@@ -62,7 +62,7 @@ function Articles({ articles, isLoggedIn, handleSaveArticle }) {
             ))}
             {numToShow < articles.length && (
               <button
-                className="newscard__show-more"
+                className="main__show-more"
                 onClick={() => setNumToShow(numToShow + 3)}
               >
                 Show More

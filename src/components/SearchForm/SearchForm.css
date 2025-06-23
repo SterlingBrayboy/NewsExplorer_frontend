@@ -11,7 +11,9 @@
   background-color: white;
   height: 64px;
   width: 608px;
-  position: relative;
+  position: absolute;
+  left: 0px;
+  top: 250px;
   z-index: 0;
   border-radius: 32px;
   padding-left: 30px;
@@ -24,9 +26,9 @@
   color: white;
   height: 64px;
   border-radius: 32px;
-  position: absolute;
-  left: 457px;
-  top: 210px;
+  position: relative;
+  left: 230px;
+  top: 40px;
   z-index: 1;
   border: 1px solid #2f71e5;
   padding: 0 50px;

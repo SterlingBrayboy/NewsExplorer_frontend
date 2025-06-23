@@ -111,18 +111,6 @@
   transform: translateX(0);
 }
 
-.newscard__show-more {
-  grid-column: 1 / -1;
-  justify-self: center;
-  background-color: #fff;
-  color: #000;
-  height: 64px;
-  width: 288px;
-  margin-top: 20px;
-  border-radius: 32px;
-  cursor: pointer;
-}
-
 .newscard__show-more:hover {
   background-color: #e8e8e8;
   transition-duration: 0.5s;

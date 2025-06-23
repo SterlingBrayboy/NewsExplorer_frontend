@@ -61,6 +61,18 @@
   background-color: #f5f6f7;
 }
 
+.main__show-more {
+  grid-column: 1 / -1;
+  justify-self: center;
+  background-color: #fff;
+  color: #000;
+  height: 64px;
+  width: 288px;
+  margin-top: 20px;
+  border-radius: 32px;
+  cursor: pointer;
+}
+
 .main__articles {
   background-color: #f5f6f7;
   display: grid;

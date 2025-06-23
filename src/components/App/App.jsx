@@ -258,7 +258,6 @@ function App() {
           <SuccessModal
             handleCloseModal={handleCloseModal}
             onSignInClick={handleLoginModal}
-            isOpen={activeModal === "success"}
           />
         )}
       </div>
