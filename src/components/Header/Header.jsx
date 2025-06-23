@@ -74,7 +74,7 @@ const Header = ({
               type="button"
               onClick={onCreateModal}
             >
-              Sign In
+              Sign in
             </button>
             {!isLoginModalOpen && (
               <img

@@ -26,6 +26,8 @@
 }
 
 .modal__title {
+  font-family: "Roboto Regular", sans-serif;
+  font-weight: 700;
   color: #000;
   font-size: 24px;
   margin-bottom: 24px;
@@ -101,10 +103,12 @@
 
 .modal__signup {
   color: #2f71e5;
+  font-family: "Roboto Regular", sans-serif;
 }
 
 .modal__signin {
   color: #2f71e5;
+  font-family: "Roboto Regular", sans-serif;
 }
 
 .modal__signup-container {

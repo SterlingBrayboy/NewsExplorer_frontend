@@ -10,7 +10,7 @@ const SuccessModal = ({ handleCloseModal, isOpen, onSignInClick }) => {
     >
       <div className="modal__signin-container">
         <button className="modal__signin" type="button" onClick={onSignInClick}>
-          Sign In
+          Sign in
         </button>
       </div>
     </ModalWithForm>

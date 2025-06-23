@@ -6,7 +6,7 @@
 }
 
 .search__input {
-  font-family: "Roboto Regular";
+  font-family: "Roboto Regular", sans-serif;
   color: black;
   background-color: white;
   height: 64px;

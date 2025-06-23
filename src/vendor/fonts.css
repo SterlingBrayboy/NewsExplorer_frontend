@@ -17,7 +17,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Regular";
+  font-family: "Roboto Regular", sans-serif;
   src: url("./fonts/roboto-400-regular.woff2") format("woff2"),
     url("./fonts/roboto-400-regular.woff") format("woff");
   font-weight: 400;
@@ -26,7 +26,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Regular 500";
+  font-family: "Roboto Regular 500", sans-serif;
   src: url("./fonts/roboto-500.woff2") format("woff2"),
     url("./fonts/roboto-500.woff") format("woff");
   font-weight: 400;

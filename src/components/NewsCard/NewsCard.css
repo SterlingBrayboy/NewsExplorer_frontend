@@ -17,9 +17,10 @@
   bottom: 10px;
   left: 20px;
   right: 20px;
-  font-family: "Roboto Regular";
+  font-family: "Roboto Slab Regular";
   color: #b6bcbf;
   font-size: 16px;
+  text-transform: uppercase;
 }
 
 .newscard__article {

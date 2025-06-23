@@ -46,7 +46,7 @@ const RegisterModal = ({
 
   return (
     <ModalWithForm
-      title="Sign Up"
+      title="Sign up"
       onClose={handleCloseModal}
       isOpen={isOpen}
       onSubmit={handleSubmit}
@@ -95,12 +95,12 @@ const RegisterModal = ({
         type="submit"
         disabled={isButtonDisabled}
       >
-        Sign Up
+        Sign up
       </button>
       <div className="modal__signin-container">
         <p>or</p>
         <button className="modal__signin" type="button" onClick={onSignInClick}>
-          Sign In
+          Sign in
         </button>
       </div>
     </ModalWithForm>
