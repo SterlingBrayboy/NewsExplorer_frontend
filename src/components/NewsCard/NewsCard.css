@@ -1,0 +1,213 @@
+.newscard__articles {
+  background-color: #f5f6f7;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 400px);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+}
+
+.newscard__articles-empty {
+  background-color: #fff;
+}
+
+.newscard__source {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  right: 20px;
+  font-family: "Roboto Slab Regular";
+  color: #b6bcbf;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.newscard__article {
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 10px 5px 5px rgb(0 0 0 / 5%);
+  position: relative;
+  border-radius: 5%;
+  width: 100%;
+  max-width: 400px;
+  height: 576px;
+  overflow: hidden;
+}
+
+.newscard__save-button {
+  background-color: #fff;
+  background-image: url("../../images/save-icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 20px;
+  left: 335px;
+  cursor: pointer;
+}
+
+.newscard__delete-button {
+  background-color: #fff;
+  background-image: url("../../images/trash.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 20px;
+  left: 335px;
+  cursor: pointer;
+}
+
+.newscard__save-button:hover {
+  background-image: url("../../images/save-dark.svg");
+  transition-duration: 0.5s;
+}
+
+.newscard__save-clicked {
+  background-image: url("../../images/save-blue.svg");
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 20px;
+  left: 335px;
+  cursor: pointer;
+}
+
+.newscard__warning {
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  height: 40px;
+  width: 182px;
+  font-size: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 145px;
+  top: 20px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.newscard__warning_visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.newscard__show-more:hover {
+  background-color: #e8e8e8;
+  transition-duration: 0.5s;
+}
+
+.newscard__image {
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  height: 272px;
+  width: 400px;
+}
+
+.newscard__info {
+  background-color: #fff;
+  font-family: "Roboto Slab Regular", sans-serif;
+}
+
+.newscard__title {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  color: black;
+  font-size: 26px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.newscard__date {
+  color: #b6bcbf;
+  font-size: 18px;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+
+.newscard__description {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: black;
+  font-size: 16px;
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; /* Enable multi-line truncation */
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+@media (max-width: 1250px) {
+  .newscard__articles {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding-top: 10px;
+    padding-bottom: 15px;
+    justify-content: center;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .newscard__article {
+    height: 420px;
+    width: 224px;
+    max-width: 100%;
+  }
+
+  .newscard__title {
+    font-size: 22px;
+  }
+
+  .newscard__image {
+    height: 150px;
+    width: 224px;
+    max-width: 100%;
+  }
+
+  .newscard__save-button {
+    left: 170px;
+  }
+
+  .newscard__warning {
+    left: 5px;
+    top: 20px;
+    width: 160px;
+  }
+
+  @media (max-width: 859px) {
+    .newscard__article {
+      grid-column: 1 / -1;
+      justify-self: center;
+      gap: 0;
+      height: 440px;
+      width: 250px;
+    }
+    .newscard__image {
+      width: 250px;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.footer {
+  font-family: "Roboto Slab Regular", sans-serif;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.footer__credits {
+  color: #b6bcbf;
+  font-size: 16px;
+}
+
+.footer__elements {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* FOOTER GROUPINGS */
+
+.footer__links {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer__icons {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.footer__buttons {
+  display: flex;
+  gap: 30px;
+}
+
+/* FOOTER INDIVIDUALS */
+
+.footer__github {
+  cursor: pointer;
+}
+
+.footer__linkedin {
+  cursor: pointer;
+}
+
+.footer__home {
+  cursor: pointer;
+  font-family: "Roboto Regular", sans-serif;
+  font-size: 18px;
+  border: none;
+  background-color: #fff;
+}
+
+.footer__tripleten {
+  cursor: pointer;
+  font-family: "Roboto Regular", sans-serif;
+  font-size: 18px;
+  border: none;
+  background-color: #fff;
+}
+
+/* FOOTER HOVER STATES */
+
+.footer__home:hover {
+  opacity: 0.6;
+  transition: 0.2s ease-in-out;
+}
+
+.footer__tripleten:hover {
+  opacity: 0.6;
+  transition: 0.2s ease-in-out;
+}
+
+.footer__github:hover {
+  opacity: 0.6;
+  transition: 0.2s ease-in-out;
+}
+
+.footer__linkedin:hover {
+  opacity: 0.6;
+  transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 830px) {
+  .footer {
+    padding: 0;
+  }
+
+  .footer__home {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .footer__elements {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-direction: column-reverse;
+  }
+
+  .footer__github {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer__linkedin {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer__icons {
+    display: flex;
+    justify-content: flex-end;
+    max-width: fit-content;
+  }
+
+  .footer__links {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+  }
+
+  .footer__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 460px) {
+  .footer__elements {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+  }
+
+  .footer__credits {
+    font-size: 15px;
+  }
+}

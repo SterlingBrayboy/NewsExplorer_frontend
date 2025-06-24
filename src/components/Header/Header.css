@@ -1,0 +1,162 @@
+.header__elements {
+  display: flex;
+  margin-top: 30px;
+  margin-right: 44px;
+  gap: 30px;
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  color: #fff;
+}
+
+.header__logo {
+  height: 24px;
+  max-width: 200px;
+  position: absolute;
+  top: 42px;
+  margin-left: 44px;
+  cursor: pointer;
+}
+
+.header__home-button {
+  display: flex;
+  align-items: start;
+  margin-top: 10px;
+  padding-bottom: 18px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-family: "Roboto Regular 500", sans-serif;
+  font-size: 18px;
+  border-bottom: 3px solid #fff;
+  cursor: pointer;
+}
+
+.header__saved-button {
+  display: flex;
+  align-items: start;
+  margin-top: 10px;
+  padding-bottom: 23px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-family: "Roboto Regular 500", sans-serif;
+  font-size: 18px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.header__sign-in {
+  background: transparent url(../../images/Rectangle.svg) center no-repeat;
+  border-radius: 100px;
+  border: solid 1px #fff;
+  color: #fff;
+  font-size: 18px;
+  height: 48px;
+  width: 176px;
+  cursor: pointer;
+}
+
+.header__sign-out {
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  border: solid 1px #fff;
+  color: #fff;
+  font-family: "Roboto Regular 500", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  height: 48px;
+  width: 112px;
+}
+
+.header__sign-out-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.header__menu {
+  display: none;
+}
+
+.header__modal {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header__border {
+  position: absolute;
+  margin-top: 90px;
+  display: flex;
+  width: 99.5%;
+  border: solid 1px #fff;
+  opacity: 0.2;
+}
+
+.header__border-black {
+  position: absolute;
+  margin-top: -10px;
+  display: flex;
+  width: 99.5%;
+  border: solid 1px #000;
+}
+
+.header__profile .header__home-button,
+.header__profile .header__sign-in {
+  color: black;
+}
+
+.header__profile .header__saved-button {
+  color: black;
+  border-bottom: 3px solid #000;
+}
+
+.header__profile .header__sign-out {
+  color: black;
+  border: solid 1px #000;
+}
+
+@media (max-width: 730px) {
+  .header__home-button {
+    display: none;
+  }
+
+  .header__sign-in {
+    display: none;
+  }
+
+  .header__menu {
+    position: relative;
+    top: 12px;
+    display: flex;
+    left: 20px;
+    cursor: pointer;
+  }
+
+  .header__sign-out {
+    display: none;
+  }
+
+  .header__sign-out-icon {
+    display: none;
+  }
+
+  .header__saved-button {
+    display: none;
+  }
+
+  .header__logo {
+    margin-left: 24px;
+  }
+}

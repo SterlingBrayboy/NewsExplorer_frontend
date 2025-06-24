@@ -1,0 +1,141 @@
+.main__section {
+  display: flex;
+  justify-content: center;
+}
+
+.main__container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 18%;
+  height: 128px;
+  max-width: 608px;
+}
+
+.main__title {
+  font-family: "Roboto Slab Regular", sans-serif;
+  line-height: 64px;
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.main__subtitle {
+  font-size: 18px;
+}
+
+.main__error {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 200px;
+}
+
+.main__error-title {
+  font-family: "Roboto Slab Bold", sans-serif;
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+}
+
+.main__error-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #b6bcbf;
+}
+
+.main__error-pic {
+  display: flex;
+  justify-self: center;
+  height: 82.5px;
+  width: 82.5px;
+  margin-right: 0;
+  margin-bottom: 15px;
+}
+
+.main__search-results {
+  font-family: "Roboto Slab Regular", sans-serif;
+  font-size: 40px;
+  padding-left: 62px;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  background-color: #f5f6f7;
+}
+
+.main__show-more {
+  grid-column: 1 / -1;
+  justify-self: center;
+  background-color: #fff;
+  color: #000;
+  height: 64px;
+  width: 288px;
+  margin-top: 20px;
+  border-radius: 32px;
+  cursor: pointer;
+}
+
+.main__articles {
+  background-color: #f5f6f7;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 400px);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+}
+
+.main__background {
+  background-image: url("../../images/Background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  background-size: cover;
+}
+
+@media (max-width: 1250px) {
+  .main__articles {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding-top: 10px;
+    padding-bottom: 15px;
+    justify-content: center;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .main__container {
+    width: 500px;
+    height: 200px;
+    justify-content: start;
+  }
+
+  .main__title {
+    font-size: 45px;
+    line-height: 40px;
+    margin-left: 20px;
+  }
+
+  .main__subtitle {
+    max-width: 452px;
+  }
+}
+
+@media (max-width: 530px) {
+  .main__container {
+    max-width: 290px;
+    height: 200px;
+  }
+
+  .main__title {
+    font-size: 34px;
+    line-height: 40px;
+    margin-left: 0;
+  }
+
+  .main__subtitle {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,52 @@
+.profile {
+  margin-top: 100px;
+}
+
+.profile__container {
+  padding-left: 0;
+}
+
+.profile__pretext {
+  font-size: 16px;
+  color: #1a1b2280;
+  font-family: "Roboto Regular", sans-serif;
+  padding-top: 20px;
+  margin-left: 15px;
+}
+
+.profile__title {
+  font-size: 18px;
+  font-family: "Roboto Slab Regular", sans-serif;
+  color: #000;
+  font-size: 40px;
+  padding-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile__articles {
+  background-color: #f5f6f7;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 400px);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.profile__articles-empty {
+  background-color: #fff;
+}
+
+@media (max-width: 1250px) {
+  .profile__articles {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding-top: 10px;
+    padding-bottom: 15px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}

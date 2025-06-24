@@ -1,0 +1,35 @@
+.preloader {
+  position: relative;
+  width: 100%;
+  height: 227px;
+  background-color: #f5f6f7;
+}
+
+.preloader__circle {
+  position: absolute; /* Position relative to the parent */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; /* Center the circle */
+  width: 50px;
+  height: 50px;
+  border: 4px solid #444;
+  border-bottom-color: #888;
+  border-radius: 50%;
+  animation: spin 0.75s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.preloader__text {
+  padding-top: 160px;
+  color: #b6bcbf;
+  text-align: center;
+  justify-self: center;
+  margin-left: 15px;
+}
