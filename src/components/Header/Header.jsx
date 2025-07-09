@@ -49,7 +49,7 @@ const Header = ({
               type="button"
               onClick={handleLogout}
             >
-              Elise
+              T'Challa
               <img
                 src={isProfilePage ? exitBlk : exitWht}
                 alt="Sign Out"

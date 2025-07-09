@@ -1,3 +1,3 @@
 # VISIT NEWSEXPLORER
 
-GO [NewsExplorer](https://sterlingbrayboy.github.io/news_project/).
+GO [NewsExplorer](https://sterlingbrayboy.github.io/NewsExplorer_frontend/).
