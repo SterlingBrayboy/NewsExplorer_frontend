@@ -16,6 +16,6 @@
 
 ![ezgif-1dbf2fc4241636](https://github.com/user-attachments/assets/1c6a2224-da6f-4cc4-901d-fadb1d10c42f)
 
-# VISIT APP >
+# VISIT THE NEWS EXPLORER APP :) >
 
 [NewsExplorer](https://sterlingbrayboy.github.io/NewsExplorer_frontend/)
